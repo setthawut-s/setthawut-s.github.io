@@ -1,0 +1,384 @@
+@import 'fonts.scss';
+@import "variables.scss";
+
+.blog-header, .blog-post, .blog-pagination {
+  margin-bottom: 2rem;
+}
+
+/* Make sure the image size is reasonable. */
+.blog-post img {
+  max-width: 100%;
+}
+
+.pdfviewer-container {
+  width: 100%;
+}
+body.landing-page-body {
+  //background: linear-gradient(to bottom, rgba(51,63,72,1) 0%,rgba(51,63,72,1) 97%,rgba(51,63,72,0.9) 100%);
+  //background-color: #ffffff;
+  background: $theme-bg-color url("../image/background.jpg") no-repeat top center fixed;
+  background-size: cover;
+}
+body.main {
+  font-family: "AP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  color: $theme-body-color;
+  //background-color: $theme-bg-color;
+  //background: linear-gradient(to bottom, rgba(51,63,72,1) 0%,rgba(51,63,72,1) 97%,rgba(51,63,72,0.9) 100%);
+  //&> .container {
+  //  padding: 75px 15px 0;
+  //}
+  a {
+    color: $theme-body-color;
+    &:hover,&:active {
+      color: $theme-body-color-dark;
+    }
+  }
+
+}
+body.landing-page-body {
+  //background: linear-gradient(to bottom, rgba(51,63,72,1) 0%,rgba(51,63,72,1) 97%,rgba(51,63,72,0.9) 100%);
+  background-color: #ffffff;
+  //background: $theme-bg-color url("../image/background.jpg") no-repeat center center fixed;
+
+}
+body.main {
+  background-color: $theme-body-bg;
+  //background: $theme-bg-color url("../image/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  &> .container {
+    //padding: 75px 15px 0;
+    padding: 40px 15px 0;
+    margin-top: 100px;
+    //margin-top: 125px;
+    background-color: $theme-bg-color-09;
+    //opacity: 0.4;
+    //background: linear-gradient(to bottom, rgba(51,63,72,1) 0%,rgba(51,63,72,1) 97%,rgba(51,63,72,0.9) 100%);
+    height: 100%;
+    border: $theme-nav-border-bottom-width $theme-nav-border-bottom-style $theme-nav-border-bottom-color;
+    min-height: 550px;
+  }
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 50px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 50px;
+  line-height: 50px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+
+/* Header style
+-------------------------- */
+
+//@media (min-width: 576px) {
+//  .header {
+//    .navbar-nav {
+//      max-width: 540px;
+//    }
+//  }
+//}
+//@media (min-width: 768px) {
+//  .header {
+//    .navbar-nav {
+//      max-width: 720px;
+//    }
+//  }
+//}
+@media (min-width: 992px) {
+  .header {
+    .navbar-nav {
+      //max-width: 960px;
+      //max-width: 100%;
+      //margin-left: 6%;
+      //margin-right: 6%;
+    }
+  }
+}
+@media (min-width: 1400px) {
+  .header {
+    .navbar-nav {
+      //max-width: 960px;
+      //max-width: 100%;
+      //margin-left: 10%;
+      //margin-right: 10%;
+    }
+  }
+}
+//@media (min-width: 1200px) {
+//  .header {
+//    .navbar-nav {
+//      max-width: 1140px;
+//    }
+//  }
+//}
+.header {
+
+  .navbar {
+    border-bottom: $theme-nav-border-bottom-width $theme-nav-border-bottom-style $theme-nav-border-bottom-color;
+    //display: block;
+    //.navbar-brand-wrap {
+    //  text-align: center;
+    //}
+    background-color: $theme-nav-bg;
+
+    .nav-link {
+      font-family: "AP", sans-serif;
+      //font-size: 1.4rem;
+      color: $theme-nav-text-color;
+      text-transform: uppercase;
+      //font-variant: small-caps;
+      letter-spacing: 2px;
+      padding-left: 30px;
+      padding-right: 30px;
+      opacity: 1.0;
+      transition: opacity 0.8s, color 0.8s, font-weight 0.8s;
+      //span:first-child {
+      //  font-size: $theme-nav-first-letter-size;
+      //  color: $theme-nav-first-letter-color;
+      //  transition: opacity 0.8s, color 0.8s, font-weight 0.8s;
+      //}
+      &:hover {
+        opacity: 1.0;
+        color: $theme-nav-text-color-hover;
+        font-weight: 500;
+        //span:first-child {
+        //  font-size: $theme-nav-first-letter-size;
+        //  color: $theme-nav-first-letter-color-hover;
+        //  font-weight: 500;
+        //}
+      }
+    }
+    .nav-item.active {
+      background-color: $theme-nav-bg-active;
+      border-radius: $theme-nav-border-radius-active;
+      .nav-link {
+        opacity: 1.0;
+        color: $theme-nav-text-color-active;
+        font-weight: 500;
+      }
+    }
+    .navbar-collapse {
+      transition: background-color 0.2s;
+    }
+    .navbar-collapse.collapse.show {
+      background-color: $theme-bg-color;
+    }
+
+    // when scroll past certain pixel
+    &.sps {
+      transition: background-color 0.5s ease-out;
+    }
+    &.sps--blw {
+      background-color: $theme-bg-color-09;
+    }
+  }
+  .navbar-brand {
+    font-family: "AP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    //background-color: #ffffff;
+    text-align: center;
+    padding: 5px;
+    //border-radius: 50%;
+  }
+  .navbar-nav {
+    //border-top: 1px #ffffff solid;
+    //padding-left: 30px;
+    //padding-right: 30px;
+    //width: 100%;
+    text-align: center;
+    //margin-left: 10%;
+    //margin-right: 10%;
+    //margin-left: auto;
+    //margin-right: auto;
+    //margin-left: 0;
+    //margin-right: 0;
+  }
+}
+hr {
+  border-top-color: $theme-line-color;
+  border-top-style: solid;
+  border-top-width: 3px;
+}
+.construction-title,
+.warranty-title,
+.service-title,
+.table-title,
+.material-title,
+.pdflist-title {
+  font-family: "AP", serif;
+  text-transform: uppercase;
+  //font-variant: small-caps;
+  //span:first-child {
+  //  font-size: $theme-nav-first-letter-size;
+  //  color: $theme-nav-first-letter-color;
+  //}
+  a {
+    color: $theme-body-color;
+    transition: color 0.8s;
+    &:hover {
+      text-decoration: none;
+      color: $theme-body-color-hover;
+    }
+  }
+}
+
+//.warranty-content {
+//  ul li a {
+//    color: $theme-body-color;
+//  }
+//}
+
+/* landing page style
+ ------ */
+.landing-page-body {
+  .blog-header, .blog-post, .blog-pagination {
+    margin-bottom: 0;
+  }
+}
+.landing-page {
+  margin: 0 0 0 0;
+  padding: 72px 0 0 0;
+  float: left;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: relative;
+  overflow: hidden;
+  //position: relative;
+  //background-size: cover;
+  //background-size: 100% 100%;
+  //background: url("../image/slide22.jpg") no-repeat bottom center fixed;
+
+  img {
+    display: block;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    //top: -9999px;
+    //bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: 0 auto;
+  }
+}
+/* Warranty page
+----------------------------- */
+//.warranty-group {
+//  text-align: left;
+//  //font-family: "Didot LT Std", serif;
+//  font-family: "AP", serif;
+//  font-size: 1.1rem;
+//  //border: 1px solid $theme-line-color;
+//  margin: 16px;
+//  padding: 8px 16px;
+//  //background-color: $theme-bg-color3;
+//  background-color: rgba(124, 77, 0, 0.2);
+//  transition: all 0.5s;
+//  min-height: 99px;
+//  &:hover, &:active {
+//    background-color: rgba(124, 77, 0, 1);
+//  }
+//  a {
+//    color: $theme-body-color;
+//    text-align: center;
+//    text-decoration: none;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    height: 100%;
+//    padding: 8px 16px;
+//    //opacity: 0.6;
+//    //transition: all 0.3s;
+//    &:hover, &:active {
+//      //opacity: 1;
+//      //background-color: rgba(124, 77, 0, 1);
+//    }
+//  }
+//}
+/* Warranty, Material and Construction page
+----------------------------- */
+.warranty-group, .material-group, .construction-group {
+  text-align: left;
+  font-family: "AP", serif;
+  font-size: 1.1rem;
+  margin: 8px;
+  //padding: 8px 16px;
+  padding: 0;
+  background-color: $theme-bg-color2-02;
+  transition: all 0.5s;
+  min-height: 99px;
+  a {
+    //transition: border 0.1s;
+    transition: color 0.8s;
+  }
+  &:hover, &:active {
+    color: $theme-body-color-hover;
+    //background-color: $theme-body-color-dark;
+    a {
+      //color: $theme-bg-color2;
+      color: $theme-body-color-hover;
+      font-weight: bold;
+      border: 3px solid $theme-line-color;
+    }
+  }
+  a {
+    color: $theme-body-color-dark;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 8px 16px;
+    &:hover, &:active {
+    }
+  }
+}
+.material-content {
+  table {
+    thead {
+      th {
+        color: #333333;
+        background-color: #d9d9d9;
+        border-color: $theme-bg-color2;
+        text-align: center;
+
+        &.รายการ {
+          width: 250px;
+        }
+
+        &.เบอร์โทรศัพท์ {
+          min-width: 200px;
+        }
+      }
+
+    }
+  }
+}
+.warranty-content {
+  ul {
+    li {
+      //list-style-type: none;
+      margin-top: 4px;
+      margin-bottom: 4px;
+    }
+  }
+}
+
+.service-content {
+  color: $theme-body-color-dark;
+}
